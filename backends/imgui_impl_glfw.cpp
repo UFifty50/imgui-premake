@@ -319,6 +319,8 @@ void ImGui_ImplGlfw_MouseButtonCallback(GLFWwindow* window, int button, int acti
     ImGui_ImplGlfw_Data* bd = ImGui_ImplGlfw_GetBackendData();
     if (bd->PrevUserCallbackMousebutton != nullptr && ImGui_ImplGlfw_ShouldChainCallback(window))
         bd->PrevUserCallbackMousebutton(window, button, action, mods);
+    //if (g_PrevUserCallbackMousebutton != NULL)
+    //    g_PrevUserCallbackMousebutton(g_Window, button, action, mods);
 
     ImGui_ImplGlfw_UpdateKeyModifiers(window);
 
@@ -332,6 +334,8 @@ void ImGui_ImplGlfw_ScrollCallback(GLFWwindow* window, double xoffset, double yo
     ImGui_ImplGlfw_Data* bd = ImGui_ImplGlfw_GetBackendData();
     if (bd->PrevUserCallbackScroll != nullptr && ImGui_ImplGlfw_ShouldChainCallback(window))
         bd->PrevUserCallbackScroll(window, xoffset, yoffset);
+    //if (g_PrevUserCallbackScroll != NULL)
+    //    g_PrevUserCallbackScroll(g_Window, xoffset, yoffset);
 
 #ifdef __EMSCRIPTEN__
     // Ignore GLFW events: will be processed in ImGui_ImplEmscripten_WheelCallback().
