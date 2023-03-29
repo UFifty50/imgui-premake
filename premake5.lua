@@ -7,8 +7,7 @@ project "ImGui"
 	targetdir ("bin/" .. outputDir .. "/%{prj.name}")
 	objdir ("bin/intermediate/" .. outputDir .. "/%{prj.name}")
 
-	files
-	{
+	files {
 		"imconfig.h",
 		"imgui.h",
 		"imgui.cpp",
@@ -26,6 +25,9 @@ project "ImGui"
 
 	filter "system:windows"
 		systemversion "latest"
+        defines {
+            "_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES"
+        }
 
 	filter "system:linux"
 		pic "On"
