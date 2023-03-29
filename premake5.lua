@@ -26,7 +26,7 @@ project "ImGui"
 	filter "system:windows"
 		systemversion "latest"
         defines {
-            "_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES"
+            "_CRT_SECURE_NO_WARNINGS"
         }
 
 	filter "system:linux"
